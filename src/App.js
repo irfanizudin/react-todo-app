@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const data = [
   {
     id: 1,
-    message: "Cari Makan"
+    message: "Belajar Angular"
   },
   {
     id: 2,
@@ -12,13 +12,26 @@ const data = [
   {
     id: 3,
     message: "Belajar Vue"
+  },
+  {
+    id: 4,
+    message: "Belajar Node"
   }
 ]
 
-const TaskAdder = () => {
+const TaskAdder = ({ setTasks, tasks }) => {
+  const [currentValue, setCurrentValue] = useState("");
+  const handleAddTask = () => {
+    const newTask = {
+      id: tasks.length,
+      message: currentValue
+    }
+    setTasks([...tasks, newTask])
+    setCurrentValue("")
+  }
   return <div>
-    <input type="text" />
-    <button>Tambah</button>
+    <input type="text" value={currentValue} onChange={event => setCurrentValue(event.target.value)} />
+    <button disabled={currentValue === ""} onClick={() => handleAddTask()}>Tambah</button>
   </div>
 }
 
@@ -44,11 +57,12 @@ const TaskList = ({ tasks }) => {
 }
 
 const TaskApp = () => {
+  const [tasks, setTasks] = useState(data);
   return <>
     <Header />
-    <InfoBar taskNumber={3} />
-    <TaskAdder />
-    <TaskList tasks={data} />
+    <InfoBar taskNumber={tasks.length} />
+    <TaskAdder setTasks={setTasks} tasks={tasks} />
+    <TaskList tasks={tasks} />
   </>
 }
 
