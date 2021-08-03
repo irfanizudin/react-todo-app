@@ -23,7 +23,7 @@ const TaskAdder = ({ setTasks, tasks }) => {
   const [currentValue, setCurrentValue] = useState("");
   const handleAddTask = () => {
     const newTask = {
-      id: tasks.length,
+      id: tasks.length + 1,
       message: currentValue
     }
     setTasks([...tasks, newTask])
@@ -43,16 +43,20 @@ const Header = () => {
   return <h1>React Todo</h1>
 }
 
-const Task = ({ id, message }) => {
+const Task = ({ id, message, setTasks, tasks }) => {
+  const handleDelete = () => {
+    const updateTasks = tasks.filter(task => task.id !== id);
+    setTasks(updateTasks);
+  }
   return <div>
     <div>{message}</div>
-    <button>Delete</button>
-  </div>
+    <button onClick={() => handleDelete()}>Delete</button>
+  </div >
 }
 
-const TaskList = ({ tasks }) => {
+const TaskList = ({ tasks, setTasks }) => {
   return tasks.map(task => {
-    return <Task id={task.id} message={task.message} />
+    return <Task id={task.id} message={task.message} setTasks={setTasks} tasks={tasks} />
   })
 }
 
@@ -62,7 +66,7 @@ const TaskApp = () => {
     <Header />
     <InfoBar taskNumber={tasks.length} />
     <TaskAdder setTasks={setTasks} tasks={tasks} />
-    <TaskList tasks={tasks} />
+    <TaskList tasks={tasks} setTasks={setTasks} />
   </>
 }
 
