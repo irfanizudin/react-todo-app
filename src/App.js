@@ -31,7 +31,7 @@ const TaskAdder = ({ setTasks, tasks }) => {
     setCurrentValue("")
   }
   return <div className="task-adder">
-    <input type="text" value={currentValue} onChange={event => setCurrentValue(event.target.value)} />
+    <input type="text" value={currentValue} onChange={event => setCurrentValue(event.target.value)} placeholder="Add your task here..." />
     <button className="btn-primary" disabled={currentValue === ""} onClick={() => handleAddTask()}>Add</button>
   </div>
 }
