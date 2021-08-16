@@ -1,5 +1,11 @@
 # The App View
 ![react-todo view](https://github.com/irfanizudin/react-todo-app/blob/master/overview.JPG)
+![react-todo view](https://github.com/irfanizudin/react-todo-app/blob/master/overview1.JPG)
+![react-todo view](https://github.com/irfanizudin/react-todo-app/blob/master/overview2.JPG)
+![react-todo view](https://github.com/irfanizudin/react-todo-app/blob/master/overview3.JPG)
+![react-todo view](https://github.com/irfanizudin/react-todo-app/blob/master/overview4.JPG)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
