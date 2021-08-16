@@ -1,7 +1,9 @@
 # The App View
 ![react-todo view](https://github.com/irfanizudin/react-todo-app/blob/master/overview.JPG)
+## Adding a new task
 ![react-todo view](https://github.com/irfanizudin/react-todo-app/blob/master/overview1.JPG)
 ![react-todo view](https://github.com/irfanizudin/react-todo-app/blob/master/overview2.JPG)
+## Deleting a task
 ![react-todo view](https://github.com/irfanizudin/react-todo-app/blob/master/overview3.JPG)
 ![react-todo view](https://github.com/irfanizudin/react-todo-app/blob/master/overview4.JPG)
 
