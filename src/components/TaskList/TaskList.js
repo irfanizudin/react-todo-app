@@ -1,9 +1,12 @@
 import React from "react";
 import TaskItem from "./../TaskItem/TaskItem";
+import { useSelector } from "react-redux";
 
-const TaskList = ({ tasks, setTasks }) => {
-    return tasks.map((task) => {
-        return <TaskItem id={task.id} message={task.message} setTasks={setTasks} tasks={tasks} />;
+const TaskList = () => {
+    const todos = useSelector((state) => state.todos);
+
+    return todos.map((task) => {
+        return <TaskItem id={task.id} message={task.message} />;
     });
 };
 

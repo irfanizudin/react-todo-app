@@ -1,10 +1,13 @@
 import React from "react";
 import "./TaskItem.scss";
+import { useDispatch } from "react-redux";
+import { deleteTodo } from "../../redux/todoSlice";
 
-const TaskItem = ({ id, message, setTasks, tasks }) => {
+const TaskItem = ({ id, message }) => {
+    const dispatch = useDispatch();
+
     const handleDelete = () => {
-        const updateTasks = tasks.filter((task) => task.id !== id);
-        setTasks(updateTasks);
+        dispatch(deleteTodo({ id: id }));
     };
 
     return (

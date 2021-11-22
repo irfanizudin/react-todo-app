@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import "./TaskAdder.scss";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../../redux/todoSlice";
 
-const TaskAdder = ({ setTasks, tasks }) => {
+const TaskAdder = () => {
     const [currentValue, setCurrentValue] = useState("");
+
+    const dispatch = useDispatch();
+
     const handleAddTask = () => {
-        const newTask = {
-            id: tasks.length + 1,
-            message: currentValue,
-        };
-        setTasks([...tasks, newTask]);
+        dispatch(addTodo({ message: currentValue }));
         setCurrentValue("");
     };
 
