@@ -1,0 +1,33 @@
+.task-adder {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 10px;
+    margin-bottom: 15px;
+
+    input[type="text"],
+    button {
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        background-color: white;
+    }
+
+    input[type="text"]:focus {
+        outline-color: #5f30e2;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    button:disabled {
+        background-color: #c4c4c4;
+        cursor: not-allowed;
+    }
+
+    .btn-primary {
+        color: white;
+        background-color: #5f30e2;
+        font-weight: bold;
+    }
+}
